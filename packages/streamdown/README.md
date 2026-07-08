@@ -1,75 +1,75 @@
+```markdown
 # Streamdown
 
-A drop-in replacement for react-markdown, designed for AI-powered streaming.
+`react-markdown` 的即插即用替代品，专为 AI 驱动的流式输出设计。
 
-[![npm version](https://img.shields.io/npm/v/streamdown)](https://www.npmjs.com/package/streamdown)
+[![npm 版本](https://img.shields.io/npm/v/streamdown)](https://www.npmjs.com/package/streamdown)
 
-## Overview
+## 概述
 
-Formatting Markdown is easy, but when you tokenize and stream it, new challenges arise. Streamdown is built specifically to handle the unique requirements of streaming Markdown content from AI models, providing seamless formatting even with incomplete or unterminated Markdown blocks.
+格式化 Markdown 很简单，但在对它进行分词和流式传输时，会出现新的挑战。Streamdown 专为处理 AI 模型流式传输 Markdown 内容的独特需求而构建，即使面对不完整或未终止的 Markdown 块，也能提供流畅的格式化。
 
-Streamdown powers the [AI Elements Message](https://ai-sdk.dev/elements/components/message) component but can be installed as a standalone package for your own streaming needs.
+Streamdown 为 [AI Elements Message](https://ai-sdk.dev/elements/components/message) 组件提供支持，但也可以作为独立包安装，用于您自己的流式传输需求。
 
-## Features
+## 特性
 
-- 🚀 **Drop-in replacement** for `react-markdown`
-- 🔄 **Streaming-optimized** - Handles incomplete Markdown gracefully
-- 🎨 **Unterminated block parsing** - Build with `remend` for better streaming quality
-- 📊 **GitHub Flavored Markdown** - Tables, task lists, and strikethrough support
-- 🔢 **Math rendering** - LaTeX equations via KaTeX
-- 📈 **Mermaid diagrams** - Render Mermaid diagrams as code blocks with a button to render them
-- 🎯 **Code syntax highlighting** - Beautiful code blocks with Shiki
-- 🛡️ **Security-first** - Built with `rehype-harden` for safe rendering
-- ⚡ **Performance optimized** - Memoized rendering for efficient updates
+- 🚀 **即插即用替代品** - 可直接替换 `react-markdown`
+- 🔄 **流式优化** - 优雅地处理不完整的 Markdown
+- 🎨 **未终止块解析** - 结合 `remend` 构建，提供更好的流式质量
+- 📊 **GitHub Flavored Markdown** - 支持表格、任务列表和删除线
+- 🔢 **数学公式渲染** - 通过 KaTeX 渲染 LaTeX 公式
+- 📈 **Mermaid 图表** - 将 Mermaid 图表作为代码块渲染，并提供渲染按钮
+- 🎯 **代码语法高亮** - 使用 Shiki 提供美观的代码块
+- 🛡️ **安全优先** - 使用 `rehype-harden` 构建，实现安全渲染
+- ⚡ **性能优化** - 采用 Memoized 渲染，实现高效更新
 
-## Installation
+## 安装
 
 ```bash
 npm i streamdown
 ```
 
-Then, update your Tailwind `globals.css` to include the following so that Tailwind can detect the utility classes used by Streamdown.
+然后，更新您的 Tailwind `globals.css` 文件，加入以下内容，以便 Tailwind 能够检测到 Streamdown 使用的工具类。
 
 ```css
 @source "../node_modules/streamdown/dist/*.js";
 ```
 
-The path must be relative from your CSS file to the `node_modules` folder containing `streamdown`. In a standard Next.js project where `globals.css` lives in `app/`, the default path above should work.
+路径必须是相对于您的 CSS 文件到包含 `streamdown` 的 `node_modules` 文件夹的相对路径。在标准的 Next.js 项目中（`globals.css` 位于 `app/` 目录），上面的默认路径应该可以正常工作。
 
-If you install optional Streamdown plugins, add their matching `@source` lines from the relevant plugin docs (`/docs/plugins/code`, `/docs/plugins/cjk`, `/docs/plugins/math`, `/docs/plugins/mermaid`). Only include plugin `@source` entries for packages that are actually installed.
+如果您安装了 Streamdown 的可选插件，请从相关插件文档（`/docs/plugins/code`、`/docs/plugins/cjk`、`/docs/plugins/math`、`/docs/plugins/mermaid`）中添加对应的 `@source` 行。只为实际安装的包添加插件 `@source` 条目。
 
-Example:
+示例：
 
 ```css
 @source "../node_modules/@streamdown/code/dist/*.js";
 ```
 
+### Monorepo 设置
 
-### Monorepo setup
-
-In a monorepo (npm workspaces, Turbo, pnpm, etc.), dependencies are typically hoisted to the root `node_modules`. You need to adjust the relative path to point there:
+在 monorepo（npm workspaces、Turbo、pnpm 等）中，依赖通常会被提升（hoisted）到根目录的 `node_modules`。您需要调整相对路径指向那里：
 
 ```
 monorepo/
-├── node_modules/streamdown/  ← hoisted here
+├── node_modules/streamdown/  ← 提升到这里
 ├── apps/
 │   └── web/
 │       └── app/
-│           └── globals.css   ← your CSS file
+│           └── globals.css   ← 您的 CSS 文件
 ```
 
 ```css
-/* apps/web/app/globals.css → 3 levels up to reach root node_modules */
+/* apps/web/app/globals.css → 向上 3 级到达根 node_modules */
 @source "../../../node_modules/streamdown/dist/*.js";
 ```
 
-Adjust the number of `../` segments based on where your CSS file lives relative to the root `node_modules`. If you install Streamdown plugins, add their respective `@source` entries only when those packages are installed.
+根据您的 CSS 文件相对于根 `node_modules` 的位置，调整 `../` 的数量。如果安装了 Streamdown 插件，仅在实际安装这些包时添加对应的 `@source` 条目。
 
-### CSS Custom Properties (Design Tokens)
+### CSS 自定义属性（设计令牌）
 
-Streamdown components are built using shadcn/ui's design system and rely on CSS custom properties for colors, border radius, and spacing. Without these variables defined, components may render with missing backgrounds, borders, or incorrect spacing.
+Streamdown 组件基于 shadcn/ui 的设计系统构建，依赖 CSS 自定义属性来处理颜色、圆角和间距。如果未定义这些变量，组件可能会出现背景缺失、边框缺失或间距错误的问题。
 
-If you are already using shadcn/ui, these variables are set up automatically. If not, add the following minimal set to your global CSS:
+如果您已经在使用 shadcn/ui，这些变量会自动设置。如果没有，请将以下最小配置添加到您的全局 CSS 中：
 
 ```css
 :root {
@@ -101,11 +101,11 @@ If you are already using shadcn/ui, these variables are set up automatically. If
 }
 ```
 
-You can also use the shadcn/ui [theme generator](https://ui.shadcn.com/themes) to create a custom palette and copy the generated CSS variables directly into your project.
+您也可以使用 shadcn/ui 的[主题生成器](https://ui.shadcn.com/themes)创建自定义配色，并将生成的 CSS 变量直接复制到您的项目中。
 
-## Usage
+## 使用方法
 
-Here's how you can use Streamdown in your React application with the AI SDK:
+以下是在 React 应用中使用 Streamdown 结合 AI SDK 的示例：
 
 ```tsx
 import { useChat } from "@ai-sdk/react";
@@ -144,4 +144,5 @@ export default function Chat() {
 }
 ```
 
-For more info, see the [documentation](https://streamdown.ai/docs).
+更多信息请参阅[文档](https://streamdown.ai/docs)。
+```
