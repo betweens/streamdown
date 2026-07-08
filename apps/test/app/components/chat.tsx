@@ -1,10 +1,10 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
-import { cjk } from "@streamdown/cjk";
-import { code } from "@streamdown/code";
-import { math } from "@streamdown/math";
-import { mermaid } from "@streamdown/mermaid";
+import { cjk } from "@supermanzm/streamdown-cjk";
+import { code } from "@supermanzm/streamdown-code";
+import { math } from "@supermanzm/streamdown-math";
+import { mermaid } from "@supermanzm/streamdown-mermaid";
 import { DefaultChatTransport } from "ai";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -16,8 +16,8 @@ import remarkCjkFriendly from "remark-cjk-friendly";
 import remarkCjkFriendlyGfmStrikethrough from "remark-cjk-friendly-gfm-strikethrough";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import { Streamdown } from "streamdown";
-import "streamdown/styles.css";
+import { Streamdown } from "@supermanzm/streamdown";
+import "@supermanzm/streamdown/styles.css";
 import { Button } from "@/components/ui/button";
 import {
   Combobox,

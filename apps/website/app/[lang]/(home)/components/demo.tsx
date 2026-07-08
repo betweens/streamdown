@@ -1,12 +1,12 @@
 "use client";
 
-import { cjk } from "@streamdown/cjk";
-import { code } from "@streamdown/code";
-import { math } from "@streamdown/math";
-import { mermaid } from "@streamdown/mermaid";
+import { cjk } from "@supermanzm/streamdown-cjk";
+import { code } from "@supermanzm/streamdown-code";
+import { math } from "@supermanzm/streamdown-math";
+import { mermaid } from "@supermanzm/streamdown-mermaid";
 import { useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { Streamdown } from "streamdown";
+import { Streamdown } from "@supermanzm/streamdown";
 import {
   Conversation,
   ConversationContent,
@@ -23,7 +23,7 @@ Most Markdown renderers re-parse the entire document on every update. Streamdown
 Install the package from npm, then drop it into your component tree. It accepts a \`children\` string and handles the rest.
 
 \`\`\`tsx
-import { Streamdown } from "streamdown";
+import { Streamdown } from "@supermanzm/streamdown";
 
 const Chat = ({ content }: { content: string }) => (
   <Streamdown animated caret="block">
@@ -40,10 +40,10 @@ Streamdown ships with optional plugins for common use cases. Each one is a separ
 
 | Plugin | Package | Purpose |
 | --- | --- | --- |
-| Syntax highlighting | \`@streamdown/code\` | Shiki-powered code blocks |
-| Diagrams | \`@streamdown/mermaid\` | Mermaid diagram rendering |
-| Math | \`@streamdown/math\` | KaTeX math expressions |
-| CJK | \`@streamdown/cjk\` | CJK line-breaking rules |
+| Syntax highlighting | \`@supermanzm/streamdown-code\` | Shiki-powered code blocks |
+| Diagrams | \`@supermanzm/streamdown-mermaid\` | Mermaid diagram rendering |
+| Math | \`@supermanzm/streamdown-math\` | KaTeX math expressions |
+| CJK | \`@supermanzm/streamdown-cjk\` | CJK line-breaking rules |
 
 For example, the quadratic formula renders beautifully: $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$
 

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { CustomRendererProps } from "streamdown";
-import { CodeBlockContainer, CodeBlockHeader } from "streamdown";
+import type { CustomRendererProps } from "@supermanzm/streamdown";
+import { CodeBlockContainer, CodeBlockHeader } from "@supermanzm/streamdown";
 
 export const VegaLiteRenderer = ({
   code,

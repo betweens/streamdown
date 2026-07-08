@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 import { CopyButton } from "./copy-button";
 
 const exampleCode = `import { useChat } from "@ai-sdk/react";
-import { Streamdown } from "streamdown";
-import { code } from "@streamdown/code";
-import { mermaid } from "@streamdown/mermaid";
-import { math } from "@streamdown/math";
-import { cjk } from "@streamdown/cjk";
+import { Streamdown } from "@supermanzm/streamdown";
+import { code } from "@supermanzm/streamdown-code";
+import { mermaid } from "@supermanzm/streamdown-mermaid";
+import { math } from "@supermanzm/streamdown-math";
+import { cjk } from "@supermanzm/streamdown-cjk";
 import "katex/dist/katex.min.css";
 
 export default function Chat() {

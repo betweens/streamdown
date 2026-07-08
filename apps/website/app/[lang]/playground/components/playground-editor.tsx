@@ -1,13 +1,13 @@
 "use client";
 
-import { cjk } from "@streamdown/cjk";
-import { code } from "@streamdown/code";
-import { math } from "@streamdown/math";
-import { mermaid } from "@streamdown/mermaid";
+import { cjk } from "@supermanzm/streamdown-cjk";
+import { code } from "@supermanzm/streamdown-code";
+import { math } from "@supermanzm/streamdown-math";
+import { mermaid } from "@supermanzm/streamdown-mermaid";
 import { SettingsIcon } from "lucide-react";
 import { useCallback, useMemo, useRef, useState } from "react";
-import type { CustomRenderer } from "streamdown";
-import { Streamdown } from "streamdown";
+import type { CustomRenderer } from "@supermanzm/streamdown";
+import { Streamdown } from "@supermanzm/streamdown";
 import {
   Conversation,
   ConversationContent,
@@ -158,7 +158,7 @@ print(fibonacci(10))
 
 \`\`\`bash
 # Install Streamdown
-npm install streamdown @streamdown/code @streamdown/math @streamdown/mermaid
+npm install streamdown @supermanzm/streamdown-code @supermanzm/streamdown-math @supermanzm/streamdown-mermaid
 \`\`\`
 
 ---

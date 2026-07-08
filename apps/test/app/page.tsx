@@ -1,6 +1,8 @@
 import { gateway } from "@ai-sdk/gateway";
 import { Chat } from "./components/chat";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   const { models } = await gateway.getAvailableModels();
   const list = models
