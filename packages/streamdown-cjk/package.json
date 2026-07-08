@@ -1,5 +1,5 @@
 {
-  "name": "@streamdown/cjk",
+  "name": "@supermanzm/streamdown-cjk",
   "version": "1.0.3",
   "type": "module",
   "main": "./dist/index.js",

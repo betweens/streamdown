@@ -1,5 +1,5 @@
 {
-  "name": "@streamdown/mermaid",
+  "name": "@supermanzm/streamdown-mermaid",
   "version": "1.0.2",
   "type": "module",
   "main": "./dist/index.js",

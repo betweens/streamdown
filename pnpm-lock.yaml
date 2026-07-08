@@ -38,16 +38,19 @@ importers:
       '@radix-ui/react-use-controllable-state':
         specifier: ^1.2.2
         version: 1.2.2(@types/react@19.2.8)(react@19.2.3)
-      '@streamdown/cjk':
+      '@supermanzm/streamdown':
+        specifier: workspace:*
+        version: link:../../packages/streamdown
+      '@supermanzm/streamdown-cjk':
         specifier: workspace:*
         version: link:../../packages/streamdown-cjk
-      '@streamdown/code':
+      '@supermanzm/streamdown-code':
         specifier: workspace:*
         version: link:../../packages/streamdown-code
-      '@streamdown/math':
+      '@supermanzm/streamdown-math':
         specifier: workspace:*
         version: link:../../packages/streamdown-math
-      '@streamdown/mermaid':
+      '@supermanzm/streamdown-mermaid':
         specifier: workspace:*
         version: link:../../packages/streamdown-mermaid
       ai:
@@ -101,9 +104,6 @@ importers:
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
-      streamdown:
-        specifier: workspace:*
-        version: link:../../packages/streamdown
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -144,16 +144,19 @@ importers:
       '@orama/tokenizers':
         specifier: ^3.1.16
         version: 3.1.18
-      '@streamdown/cjk':
+      '@supermanzm/streamdown':
+        specifier: workspace:*
+        version: link:../../packages/streamdown
+      '@supermanzm/streamdown-cjk':
         specifier: workspace:*
         version: link:../../packages/streamdown-cjk
-      '@streamdown/code':
+      '@supermanzm/streamdown-code':
         specifier: workspace:*
         version: link:../../packages/streamdown-code
-      '@streamdown/math':
+      '@supermanzm/streamdown-math':
         specifier: workspace:*
         version: link:../../packages/streamdown-math
-      '@streamdown/mermaid':
+      '@supermanzm/streamdown-mermaid':
         specifier: workspace:*
         version: link:../../packages/streamdown-mermaid
       '@vercel/analytics':
@@ -240,9 +243,6 @@ importers:
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      streamdown:
-        specifier: workspace:*
-        version: link:../../packages/streamdown
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -362,13 +362,13 @@ importers:
         specifier: ^6.0.0
         version: 6.0.2
     devDependencies:
-      '@streamdown/cjk':
+      '@supermanzm/streamdown-cjk':
         specifier: workspace:*
         version: link:../streamdown-cjk
-      '@streamdown/math':
+      '@supermanzm/streamdown-math':
         specifier: workspace:*
         version: link:../streamdown-math
-      '@streamdown/mermaid':
+      '@supermanzm/streamdown-mermaid':
         specifier: workspace:*
         version: link:../streamdown-mermaid
       '@testing-library/jest-dom':
